@@ -25,9 +25,9 @@ class KVIImageBackgroundNavigationController: UINavigationController, UINavigati
         
         self.delegate = self
         
-        if let imageNameObject = self.imageName {
+        if let imageName = self.imageName {
             
-            if let imageView = self.imageViewWithImageWithName(imageNameObject) {
+            if let imageView = self.imageViewWithImageWithName(imageName) {
                 
                 self.view.addSubview(imageView)
                 
@@ -118,5 +118,6 @@ class KVIImageBackgroundNavigationController: UINavigationController, UINavigati
             }
             
             return nil
+            
     }
 }

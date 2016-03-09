@@ -29,16 +29,22 @@ class KVIImageBackgroundNavigationController: UINavigationController, UINavigati
             
             if let imageView = self.imageViewWithImageWithName(imageName) {
                 
-                self.view.addSubview(imageView)
-                
-                self.view.sendSubviewToBack(imageView)
-                
-                self.resizeToFullScreenView(imageView)
+                self.setupImageView(imageView)
             }
         }
     }
     
     //MARK: Private
+    
+    private func setupImageView(imageView: UIImageView) {
+        imageView.clipsToBounds = true
+        
+        self.view.addSubview(imageView)
+        
+        self.view.sendSubviewToBack(imageView)
+        
+        self.resizeToFullScreenView(imageView)
+    }
     
     private func imageViewWithImageWithName(imageName: String) -> UIImageView? {
         
